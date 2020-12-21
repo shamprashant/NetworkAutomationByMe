@@ -1,0 +1,70 @@
+
+
+***************************************************************
+This is a normal Router with a SW module inside (NM-16ESW)
+It has been preconfigured with hard coded speed and duplex
+
+To create vlans use the command "vlan database" from exec mode
+After creating all desired vlans use "exit" to apply the config
+
+To view existing vlans use the command "show vlan-switch brief"
+
+Warning: You are using an old IOS image for this router.
+Please update the IOS to enable the "macro" command!
+***************************************************************
+
+
+ESW1>enable
+Password: 
+ESW1#terminal length 0
+ESW1#show ip int brief
+Interface                  IP-Address      OK? Method Status                Protocol
+FastEthernet0/0            10.10.10.6      YES manual up                    up      
+FastEthernet0/1            unassigned      YES NVRAM  administratively down down    
+FastEthernet1/0            unassigned      YES unset  up                    down    
+FastEthernet1/1            unassigned      YES unset  up                    down    
+FastEthernet1/2            unassigned      YES unset  up                    down    
+FastEthernet1/3            unassigned      YES unset  up                    down    
+FastEthernet1/4            unassigned      YES unset  up                    down    
+FastEthernet1/5            unassigned      YES unset  up                    down    
+FastEthernet1/6            unassigned      YES unset  up                    down    
+FastEthernet1/7            unassigned      YES unset  up                    down    
+FastEthernet1/8            unassigned      YES unset  up                    down    
+FastEthernet1/9            unassigned      YES unset  up                    down    
+FastEthernet1/10           unassigned      YES unset  up                    down    
+FastEthernet1/11           unassigned      YES unset  up                    down    
+FastEthernet1/12           unassigned      YES unset  up                    down    
+FastEthernet1/13           unassigned      YES unset  up                    down    
+FastEthernet1/14           unassigned      YES unset  up                    down    
+FastEthernet1/15           unassigned      YES unset  up                    down    
+Vlan1                      unassigned      YES NVRAM  administratively down down    
+ESW1#show ip bgp summ
+% BGP not active
+
+ESW1#show ip route ospf
+Default gateway is not set
+
+Host               Gateway           Last Use    Total Uses  Interface
+ICMP redirect cache is empty
+ESW1#show ip route
+Default gateway is not set
+
+Host               Gateway           Last Use    Total Uses  Interface
+ICMP redirect cache is empty
+ESW1#show log
+Syslog logging: enabled (12 messages dropped, 8 messages rate-limited,
+                0 flushes, 0 overruns, xml disabled, filtering disabled)
+    Console logging: level debugging, 59 messages logged, xml disabled,
+                     filtering disabled
+    Monitor logging: level debugging, 0 messages logged, xml disabled,
+                     filtering disabled
+    Buffer logging: disabled, xml disabled,
+                    filtering disabled
+    Logging Exception size (4096 bytes)
+    Count and timestamp logging messages: disabled
+
+No active filter modules.
+
+    Trap logging: level informational, 69 message lines logged
+ESW1#exit
+
